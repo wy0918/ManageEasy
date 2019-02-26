@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>ManageEasy - 高校教学项目全生命周期管理平台</title>
+  <link rel="icon" href="style/logo/clock.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style/css/admin.css">
+  <link rel="stylesheet" href="layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="style/css/ME_common.css">
+</head>
+
+<body class="layui-layout-body">
+  <div class="layui-layout layui-layout-admin">
+    <div class="layui-header bg-white">
+      <div class="layui-logo logo-color">ManageEasy</div>
+      <!-- top -->
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item nav-item-black right-25">
+          <a href="javascript:;">
+            <i class="layui-icon layui-icon-notice i-notice"></i>
+            最新邮件<span class="layui-badge">99+</span>
+          </a>
+        </li>
+        <li class="layui-nav-item nav-item-black">
+          <a href="javascript:;">
+            <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+            <span name="userName" id="userName"></span>
+          </a>
+          <dl class=" layui-nav-child">
+            <dd><a href="">修改头像</a></dd>
+            <dd><a href="javascript:void(0)" id="logout">退出</a></dd>
+          </dl>
+        </li>
+        <!-- <li class="layui-nav-item nav-item-black"><a href="login.html">退出</a></li> -->
+      </ul>
+      <!-- top -->
+    </div>
+    <div class="layui-side bg-blue">
+      <div class="layui-side-scroll">
+        <!-- sidebar -->
+        <ul class="layui-nav layui-nav-tree bg-blue" lay-filter="test">
+          <!--公共部分-->
+          <li class="layui-nav-item nav-item-blue">
+            <a href="home.html"><i class="layui-icon layui-icon-home"></i>首页</a>
+          </li>
+          <!--公共部分-->
+
+          <!--学校管理员-->
+          <li class="layui-nav-item nav-item-blue" id="admin_right1">
+            <a class="" href="javascript:;"><i class="layui-icon layui-icon-form"></i>申报管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="publish.html">发布通知</a></dd>
+              <dd><a href="firsthandle.html">初审待处理</a></dd>
+              <dd><a href="distriexpert.html">分配评审专家</a></dd>
+              <dd><a href="review.html">专家评审中</a></dd>
+              <dd><a href="finishexpert.html">专家评审完成</a></dd>
+              <dd><a href="successpro.html">已立项</a></dd>
+              <dd><a href="failurepro.html">评审后未立项</a></dd>
+              <!--教职工-->
+              <!-- <dd><a href="replist.html">申报通知</a></dd>
+                       <dd><a href="myrep.html">我的申报</a></dd>-->
+              <!--教职工-->
+            </dl>
+          </li>
+
+          <li class="layui-nav-item nav-item-blue" id="admin_right2">
+            <a href="javascript:;"><i class="layui-icon layui-icon-search"></i>中期检查管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="midrep.html">发布通知</a></dd>
+              <dd><a href="midhandle.html">审核项目</a></dd>
+              <dd><a href="midsuccess.html">已通过项目</a></dd>
+              <dd><a href="midfailure.html">待整改项目</a></dd>
+              <!--教职工-->
+              <!--<dd><a href="midteahandle.html">待处理通知</a></dd>
+                      <dd><a href="midsuccess.html">已通过项目</a></dd>
+                      <dd><a href="midmodify.html">待整改项目</a></dd>-->
+              <!--已通过项目页面同学校管理员-->
+              <!--教职工-->
+            </dl>
+          </li>
+
+          <li class="layui-nav-item nav-item-blue" id="admin_right3">
+            <a href="javascript:;"><i class="layui-icon layui-icon-read"></i>结题验收管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="finalrep.html">发布通知</a></dd>
+              <dd><a href="finalhandle.html">审核项目</a></dd>
+              <dd><a href="finalsuccess.html">已通过项目</a></dd>
+              <dd><a href="finalfailure.html">待整改项目</a></dd>
+              <!--教职工-->
+              <!--<dd><a href="finalteahandle.html">待处理通知</a></dd>
+                      <dd><a href="finalsuccess.html">已通过项目</a></dd>
+                      <dd><a href="finalmodify.html">待整改项目</a></dd>-->
+              <!--已通过项目页面同学校管理员-->
+              <!--教职工-->
+            </dl>
+          </li>
+
+          <li class="layui-nav-item nav-item-blue" id="admin_right4">
+            <a href="javascript:;"><i class="layui-icon layui-icon-user"></i>用户管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="user.html">用户信息管理</a></dd>
+              <dd><a href="pw.html">密码重置</a></dd>
+            </dl>
+          </li>
+
+          <li class="layui-nav-item nav-item-blue" id="admin_right5">
+            <a href="news.html"><i class="layui-icon layui-icon-notice"></i>通知管理</a>
+          </li>
+
+          <li class="layui-nav-item layui-nav-itemed nav-item-blue" id="admin_right6">
+            <a href="javascript:;"><i class="layui-icon layui-icon-set"></i>系统设置</a>
+            <dl class="layui-nav-child">
+              <dd class="layui-this"><a href="character.html">角色管理</a></dd>
+            </dl>
+          </li>
+          <!--学校管理员-->
+
+          <!--教职工-->
+          <li class="layui-nav-item nav-item-blue" id="teacher_right1">
+            <a class="" href="javascript:;"><i class="layui-icon layui-icon-form"></i>申报管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="replist.html">申报通知</a></dd>
+              <dd><a href="myrep.html">我的申报</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item nav-item-blue" id="teacher_right2">
+            <a href="javascript:;"><i class="layui-icon layui-icon-search"></i>中期检查管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="midteahandle.html">待处理通知</a></dd>
+              <dd><a href="midsuccess.html">已通过项目</a></dd>
+              <dd><a href="midmodify.html">待整改项目</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item nav-item-blue" id="teacher_right3">
+            <a href="javascript:;"><i class="layui-icon layui-icon-read"></i>结题验收管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="finalteahandle.html">待处理通知</a></dd>
+              <dd><a href="finalsuccess.html">已通过项目</a></dd>
+              <dd><a href="finalmodify.html">待整改项目</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item nav-item-blue" id="teacher_right4">
+            <a class="" href="javascript:;"><i class="layui-icon layui-icon-form"></i>资料管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="pw.html">密码重置</a></dd>
+            </dl>
+          </li>
+          <!--教职工-->
+
+          <!--外部评审专家-->
+          <li class="layui-nav-item nav-item-blue" id="expert_right1">
+            <a class="" href="javascript:;"><i class="layui-icon layui-icon-form"></i>项目评审</a>
+            <dl class="layui-nav-child">
+              <dd><a href="expert.html">未评审项目</a></dd>
+              <dd><a href="expertlist.html">已评审项目</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item nav-item-blue" id="expert_right2">
+            <a class="" href="javascript:;"><i class="layui-icon layui-icon-form"></i>资料管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="pw.html">密码重置</a></dd>
+            </dl>
+          </li>
+          <!--资料管理-密码部分=用户管理-密码重置；-->
+          <!--已评审页面同专家评审完成页面同所以建议将项目评审模块和申报管理模块内容合并,这里依然做分开处理-->
+          <!--外部评审专家-->
+        </ul>
+        <!-- sidebar -->
+      </div>
+    </div>
+
+    <div class="layui-body layui-bg-gray">
+      <!-- content -->
+      <div style="padding: 15px;">
+        <!--blank-->
+        <h1>角色管理</h1><br>
+
+        <div class="layui-fluid">
+          <div class="layui-card pad-40">
+            <!--form筛选-->
+            <form class="layui-form" action="#">
+              <div class="layui-form-item">
+                <div class="layui-inline">
+                  <div class="layui-input-block ">
+                    <!-- <select name="type" lay-verify="required">
+                      <option value="0">所有</option>
+                      <option value="1">学校管理员</option>
+                      <option value="2">教职工</option>
+                      <option value="3">外部评审专家</option>
+                    </select> -->
+                  </div>
+                </div>
+                <div class="layui-inline right">
+                  <button type="button" class="layui-btn bg-blue" id="addcharacter"><i class="layui-icon layui-icon-add-1"></i> 新增</button>
+                </div>
+              </div>
+            </form>
+            <!--form筛选-->
+            <!--table-->
+            <table class="layui-hide" id="charactertable" lay-filter="charactertable"></table>
+            <script type="text/html" id="bar1">
+     <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
+     <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="del">删除</a>
+     </script>
+            <!--table-->
+          </div>
+        </div>
+      </div>
+      <!--blank-->
+    </div>
+    <!-- content -->
+  </div>
+
+  <div class="layui-footer">
+    <!-- footer -->
+    © ManageEasy - 高校教学项目全生命周期管理平台
+  </div>
+
+  <!-- 新增角色 -->
+  <div id="addcharacterdetails" style="padding: 25px;display: none">
+    <form class="layui-form" action="" lay-filter="formCharacter" id="formCharacter">
+      <div class="layui-form-item">
+        <label class="layui-form-label">角色名称</label>
+        <div class="layui-input-block">
+          <input type="text" name="cName" id="cName" required lay-verify="required" placeholder="请输入角色名称" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">角色描述</label>
+        <div class="layui-input-block">
+          <input type="text" name="cDesc" id="cDesc" required lay-verify="required" placeholder="请输入角色描述" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+
+      <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-block">
+          <textarea name="cComment" id="cComment" placeholder="请输入备注" class="layui-textarea"></textarea>
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <div class="layui-input-block right">
+          <button class="layui-btn bg-blue" lay-submit lay-filter="LAY-char-add-submit" id="addChar">立即提交</button>
+          <button class="layui-btn bg-blue" lay-submit lay-filter="LAY-char-update-submit" id="updateChar" style="display:none">确认修改</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+  <script src="layui/layui.js"></script>
+  <script src="style/js/index.js"></script>
+  <script src="style/js/character.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+.layui-header{
+	height:60px!important;
+}
+.layui-body{
+	left: 200px!important;
+}
+.layui-layout-admin .layui-logo{
+	box-sizing: none!important;
+	box-shadow: none!important;
+}
+.logo-color{
+	color:#555!important;
+	font-size: 15!important;
+	font-weight: 800!important;
+	background-color: #fff!important;
+}
+.word-blue{
+	color: #5e87b0!important;
+}
+.bg-blue{
+	background-color: #5e87b0;
+	color: #fff;
+}
+.bg-white{
+	background-color:#fff!important;
+}
+.center{
+	text-align: center;
+}
+.nav-item-black a{
+	color:#555!important;font-size: 13;font-weight: 600
+}
+.right-25{
+	margin-right: 25px;
+}
+.right-35{
+	margin-right: 35px;
+}
+.left-25{
+	margin-left: 25px;
+}
+.left-35{
+	margin-left: 35px;
+}
+.bottom-50{
+	margin-bottom: 50px
+}
+.pad-40{
+	padding: 40px;
+}
+.i-notice{
+	font-size: 20px; 
+	color: #555;
+}
+.layui-side .nav-item-blue{
+	background-color: #5e87b0;
+	color: #fff;
+}
+.layui-side .layui-nav-item a:hover{
+	background: #425e7b!important;
+}
+.layui-side .layui-nav-itemed{
+	background: #425e7b!important;
+}
+.layui-side .layui-nav-tree .layui-this>a{
+	background: #425e7b!important;
+}
+.layui-side .layui-nav-tree .layui-this>a:hover{
+	background: #425e7b!important;
+}
+.layui-side .layui-nav-child a{
+	background-color: #4b739a;
+}
+.layui-icon{
+	margin-right: 15px
+}
+
+
+.right{
+	float: right!important;
+}

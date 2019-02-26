@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ManageEasy - 高校教学项目全生命周期管理平台</title>
+    <link rel="icon" href="style/logo/clock.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style/css/admin.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="style/css/login.css">
+    <link rel="stylesheet" href="style/css/ME_common.css">
+</head>
+
+<body class="layui-layout-body">
+    <div class="layadmin-user-login layadmin-user-display-show" id="LAY-user-login">
+        <div class="layadmin-user-login-main" style="width: 400px">
+            <div class="layadmin-user-login-box layadmin-user-login-header">
+                <h2>ManageEasy</h2>
+                <p>高校教学项目全生命周期管理平台</p>
+            </div>
+            <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
+                <div class="layui-form-item">
+                    <label class="layadmin-user-login-icon layui-icon layui-icon-username"></label>
+                    <input type="text" name="u_name" id="LAY-user-login-username" lay-verify="required" placeholder="用户名"
+                        class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <label class="layadmin-user-login-icon layui-icon layui-icon-password"></label>
+                    <input type="password" name="u_password" id="LAY-user-login-password" lay-verify="required"
+                        placeholder="密码" class="layui-input">
+                </div>
+                <!--<div class="layui-form-item">
+               <div class="">
+                    <input type="radio" name="c_name" lay-filter="identity" value="admin" title="学校管理员" checked>
+                    <input type="radio" name="c_name" lay-filter="identity" value="teacher" title="教职工">
+                    <input type="radio" name="c_name" lay-filter="identity" value="expert" title="外部评审专家">
+               </div>  
+        </div>-->
+                <div class="layui-form-item" style="margin-bottom: 20px;">
+                    <input type="checkbox" name="remember" lay-skin="primary" title="记住密码">
+                    <!--<a href="reg.html" class="layadmin-user-jump-change layadmin-link word-blue" style="margin-top: 7px;">注册帐号</a>-->
+                </div>
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid bg-blue" lay-submit lay-filter="LAY-user-login-submit">登 录</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-trans layadmin-user-login-footer">
+            <!-- footer -->
+            © ManageEasy - 高校教学项目全生命周期管理平台
+        </div>
+    </div>
+    <script src="layui/layui.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        layui.use('form', function () {
+            var form = layui.form;
+            var $ = layui.jquery;
+            //提交
+            form.on('submit(LAY-user-login-submit)', function (data) {
+                var username = $("#LAY-user-login-username").val();
+                var password = $("#LAY-user-login-password").val();
+
+                var formdata = new FormData();
+                formdata.append("username", username);
+                formdata.append("password", password);
+
+                var settings = {
+                    "url": "http://localhost:8006/user/login",
+                    "method": "POST",
+                    "timeout": 0,
+                    "processData": false,
+                    "mimeType": "multipart/form-data",
+                    "contentType": false,
+                    "data": formdata,
+                    "xhrFields": { withCredentials: true },
+                };
+
+                $.ajax(settings).done(function (response) {
+                    var data = JSON.parse(response);    //转换为json对象                
+                    if (data.uId !== '') {
+                        //登入成功的提示与跳转
+                        layer.msg('登录成功', {
+                            offset: '15px'
+                            , icon: 1
+                            , time: 1000
+                        }, function () {
+                            location.href = 'home.html';
+                            localStorage.setItem("userinfo", JSON.stringify(data));
+                            // alert("1")
+                        });
+                    }
+                }).fail(function (data, status, xhr) {
+                    layer.msg('登录失败，请确认账号密码是否正确', {
+                        offset: '15px'
+                        , icon: 1
+                        , time: 3000
+                    });
+                });
+            });
+        });
+        function getCookie(cookieName) {
+            var cookieStr = unescape(document.cookie);
+            var arr = cookieStr.split("; ");
+            var cookieValue = "";
+            for (var i = 0; i < arr.length; i++) {
+                var temp = arr[i].split("=");
+                if (temp[0] == cookieName) {
+                    cookieValue = temp[1];
+                    break;
+                }
+            }
+            return cookieValue;
+        }
+    </script>
+</body>
+
+</html>

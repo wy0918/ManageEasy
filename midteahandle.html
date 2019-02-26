@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>ManageEasy - 高校教学项目全生命周期管理平台</title>
+  <link rel="icon" href="style/logo/clock.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style/css/admin.css">
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="style/css/ME_common.css">
+</head>
+
+<body class="layui-layout-body">
+  <div class="layui-layout layui-layout-admin">
+    <div class="layui-header bg-white">
+      <div class="layui-logo logo-color">ManageEasy</div>
+      <!-- top -->
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item nav-item-black right-25">
+          <a href="javascript:;">
+            <i class="layui-icon layui-icon-notice i-notice"></i>
+            最新邮件<span class="layui-badge">99+</span>
+          </a>
+        </li>
+        <li class="layui-nav-item nav-item-black">
+          <a href="javascript:;">
+            <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+            <span name="userName" id="userName"></span>
+          </a>
+          <dl class=" layui-nav-child">
+            <dd><a href="">修改头像</a></dd>
+            <dd><a href="javascript:void(0)" id="logout">退出</a></dd>
+          </dl>
+        </li>
+        <!-- <li class="layui-nav-item nav-item-black"><a href="login.html">退出</a></li> -->
+      </ul>
+      <!-- top -->
+    </div>
+    <div class="layui-side bg-blue">
+      <div class="layui-side-scroll">
+        <!-- sidebar -->
+        <ul class="layui-nav layui-nav-tree bg-blue" lay-filter="test">
+          <!--公共部分-->
+          <li class="layui-nav-item nav-item-blue">
+            <a href="home.html"><i class="layui-icon layui-icon-home"></i>首页</a>
+          </li>
+          <!--公共部分-->
+
+          <!--学校管理员-->
+          <li class="layui-nav-item nav-item-blue" id="admin_right1">
+            <a class="" href="javascript:;"><i class="layui-icon layui-icon-form"></i>申报管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="publish.html">发布通知</a></dd>
+              <dd><a href="firsthandle.html">初审待处理</a></dd>
+              <dd><a href="distriexpert.html">分配评审专家</a></dd>
+              <dd><a href="review.html">专家评审中</a></dd>
+              <dd><a href="finishexpert.html">专家评审完成</a></dd>
+              <dd><a href="successpro.html">已立项</a></dd>
+              <dd><a href="failurepro.html">评审后未立项</a></dd>
+              <!--教职工-->
+              <!-- <dd><a href="replist.html">申报通知</a></dd>
+                             <dd><a href="myrep.html">我的申报</a></dd>-->
+              <!--教职工-->
+            </dl>
+          </li>
+
+          <li class="layui-nav-item nav-item-blue" id="admin_right2">
+            <a href="javascript:;"><i class="layui-icon layui-icon-search"></i>中期检查管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="midrep.html">发布通知</a></dd>
+              <dd><a href="midhandle.html">审核项目</a></dd>
+              <dd><a href="midsuccess.html">已通过项目</a></dd>
+              <dd><a href="midfailure.html">待整改项目</a></dd>
+              <!--教职工-->
+              <!--<dd><a href="midteahandle.html">待处理通知</a></dd>
+                            <dd><a href="midsuccess.html">已通过项目</a></dd>
+                            <dd><a href="midmodify.html">待整改项目</a></dd>-->
+              <!--已通过项目页面同学校管理员-->
+              <!--教职工-->
+            </dl>
+          </li>
+
+          <li class="layui-nav-item nav-item-blue" id="admin_right3">
+            <a href="javascript:;"><i class="layui-icon layui-icon-read"></i>结题验收管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="finalrep.html">发布通知</a></dd>
+              <dd><a href="finalhandle.html">审核项目</a></dd>
+              <dd><a href="finalsuccess.html">已通过项目</a></dd>
+              <dd><a href="finalfailure.html">待整改项目</a></dd>
+              <!--教职工-->
+              <!--<dd><a href="finalteahandle.html">待处理通知</a></dd>
+                            <dd><a href="finalsuccess.html">已通过项目</a></dd>
+                            <dd><a href="finalmodify.html">待整改项目</a></dd>-->
+              <!--已通过项目页面同学校管理员-->
+              <!--教职工-->
+            </dl>
+          </li>
+
+          <li class="layui-nav-item nav-item-blue" id="admin_right4">
+            <a href="javascript:;"><i class="layui-icon layui-icon-user"></i>用户管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="user.html">用户信息管理</a></dd>
+              <dd><a href="pw.html">密码重置</a></dd>
+            </dl>
+          </li>
+
+          <li class="layui-nav-item nav-item-blue" id="admin_right5">
+            <a href="news.html"><i class="layui-icon layui-icon-notice"></i>通知管理</a>
+          </li>
+
+          <li class="layui-nav-item nav-item-blue" id="admin_right6">
+            <a href="javascript:;"><i class="layui-icon layui-icon-set"></i>系统设置</a>
+            <dl class="layui-nav-child">
+              <dd><a href="character.html">角色管理</a></dd>
+            </dl>
+          </li>
+          <!--学校管理员-->
+
+          <!--教职工-->
+          <li class="layui-nav-item nav-item-blue" id="teacher_right1">
+            <a class="" href="javascript:;"><i class="layui-icon layui-icon-form"></i>申报管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="replist.html">申报通知</a></dd>
+              <dd><a href="myrep.html">我的申报</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item layui-nav-itemed nav-item-blue" id="teacher_right2">
+            <a href="javascript:;"><i class="layui-icon layui-icon-search"></i>中期检查管理</a>
+            <dl class="layui-nav-child">
+              <dd class="layui-this"><a href="midteahandle.html">待处理通知</a></dd>
+              <dd><a href="midsuccess.html">已通过项目</a></dd>
+              <dd><a href="midmodify.html">待整改项目</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item nav-item-blue" id="teacher_right3">
+            <a href="javascript:;"><i class="layui-icon layui-icon-read"></i>结题验收管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="finalteahandle.html">待处理通知</a></dd>
+              <dd><a href="finalsuccess.html">已通过项目</a></dd>
+              <dd><a href="finalmodify.html">待整改项目</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item nav-item-blue" id="teacher_right4">
+            <a class="" href="javascript:;"><i class="layui-icon layui-icon-form"></i>资料管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="pw.html">密码重置</a></dd>
+            </dl>
+          </li>
+          <!--教职工-->
+
+          <!--外部评审专家-->
+          <li class="layui-nav-item nav-item-blue" id="expert_right1">
+            <a class="" href="javascript:;"><i class="layui-icon layui-icon-form"></i>项目评审</a>
+            <dl class="layui-nav-child">
+              <dd><a href="expert.html">未评审项目</a></dd>
+              <dd><a href="expertlist.html">已评审项目</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item nav-item-blue" id="expert_right2">
+            <a class="" href="javascript:;"><i class="layui-icon layui-icon-form"></i>资料管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="pw.html">密码重置</a></dd>
+            </dl>
+          </li>
+          <!--资料管理-密码部分=用户管理-密码重置；-->
+          <!--已评审页面同专家评审完成页面同所以建议将项目评审模块和申报管理模块内容合并,这里依然做分开处理-->
+          <!--外部评审专家-->
+        </ul>
+        <!-- sidebar -->
+      </div>
+    </div>
+
+    <div class="layui-body layui-bg-gray">
+      <!-- content -->
+      <div style="padding: 15px;">
+        <!--blank-->
+        <br>
+        <h1>待处理通知</h1>
+        <br>
+        <div class="layui-fluid">
+          <div class="layui-card pad-40">
+            <!--form筛选-->
+            <form class="layui-form" action="#">
+              <div class="layui-form-item">
+                <label class="layui-form-label">项目类型：</label>
+                <div class="layui-input-block ">
+                  <select id="ptId" lay-verify="required" lay-filter="select_protype">
+                    <option value="1">教改项目</option>
+                    <option value="2">课程建设项目</option>
+                    <option value="3">专业建设项目</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+            <!--form筛选-->
+            <!--table-->
+            <table class="layui-table" lay-even="" lay-skin="nob" id="table1" lay-filter="table1">
+            </table>
+            <!--table操作-->
+            <script type="text/html" id="toolbar1"></script>
+            <script type="text/html" id="bar1">
+    <a class="word-blue" lay-event="lookdetail">查看详情</a>
+  </script>
+            <!--table-->
+
+          </div>
+          <!--blank-->
+        </div>
+        <!-- content -->
+      </div>
+
+      <div class="layui-footer">
+        <!-- footer -->
+        © ManageEasy - 高校教学项目全生命周期管理平台
+      </div>
+    </div>
+
+    <script src="layui/layui.js"></script>
+    <script src="style/js/index.js"></script>
+    <script>
+      layui.use(['element', 'form', 'table', 'layer', 'upload'], function () {
+        var element = layui.element;
+        var form = layui.form;
+        var table = layui.table;
+        var upload = layui.upload;
+        var $ = layui.jquery, layer = layui.layer;
+
+        //教改项目table
+        var showNtfTable = function (url) {
+          table.render({
+            elem: '#table1',
+            url: url,//'http://localhost:8006/notification/queryWithProj?ntid=1&ptid='+ptid,
+            toolbar: '#toolbar1',
+            title: '申报通知列表',
+            page: true
+            , request: {
+              pageName: 'pageNum', //页码的参数名称，默认：page
+              limitName: 'pageSize' //每页数据量的参数名，默认：limit
+            }
+            , response: {
+              statusName: 'code' //规定数据状态的字段名称，默认：code
+              //,statusCode: 200 //规定成功的状态码，默认：0
+              , msgName: 'msg' //规定状态信息的字段名称，默认：msg
+              , countName: 'totalCount' //规定数据总数的字段名称，默认：count
+              , dataName: 'data' //规定数据列表的字段名称，默认：data
+            }
+            , parseData: function (res) { //将原始数据解析成 table 组件所规定的数据
+              return {
+                "code": 0, //解析接口状态
+                "msg": '', //解析提示文本
+                "totalCount": res.totalCount, //解析数据长度
+                "data": res.data //解析数据列表
+              };
+            }
+            , cols: [[
+              { field: 'nTitle', title: '通知标题', align: 'center' },
+              { field: 'nRegTime', title: '发布时间', align: 'center', templet: function (d) { return formatTime(d.nRegtime) } },
+              { fixed: 'right', title: '操作', align: 'center', toolbar: '#bar1' }
+            ]]
+          });
+        }
+        var url1 = 'http://localhost:8006/notification/queryWithProj?ntid=2&ptid=' + $("#ptId").find("option:selected").val();
+        showNtfTable(url1);
+        //监听select事件
+        form.on('select(select_protype)', function (data) {
+          var url = 'http://localhost:8006/notification/queryWithProj?ntid=2&ptid=' + data.value;
+          showNtfTable(url);
+        });
+
+        //监听行工具事件
+        table.on('tool(table1)', function (obj) {
+          var data = obj.data;
+          if (obj.event === 'lookdetail') {
+            window.location.href = 'midteadetails.html';
+            localStorage.setItem("ntfinfo", JSON.stringify(data));
+          }
+        });
+
+      });
+
+    </script>
+</body>
+
+</html>
